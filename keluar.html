@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamu Keluar — BBMKG Wilayah II</title><link rel="stylesheet" href="style.css"></head><body><header class="site-header">
+  <div class="brand">
+    <div class="brand-mark">B</div>
+    <div><strong>BBMKG WILAYAH II</strong><span>Sistem Buku Tamu</span></div>
+  </div>
+  <div class="header-badge">TAMU KELUAR</div>
+</header>
+<main><section class="container narrow">
+<div class="eyebrow">QR Pintu Keluar</div><h1>Tamu Keluar</h1>
+<p class="subtitle" style="margin-left:0">Masukkan nomor kunjungan yang diperoleh saat melakukan pendaftaran masuk.</p>
+<form class="card form-card" id="exitForm">
+<div class="field"><label for="visitorId">Nomor Kunjungan</label><input id="visitorId" required placeholder="Contoh: T-ABC123"></div>
+<button class="btn btn-primary" type="submit">Konfirmasi Keluar</button></form>
+<div id="exitSuccess" class="card status-card hidden">
+<div class="status-icon ok">✓</div><div class="eyebrow">QR Pintu Keluar</div><h2>Data Kepulangan Tercatat</h2>
+<p class="subtitle">Terima kasih atas kunjungan Anda. Data waktu keluar telah tersimpan.</p>
+<div class="status-box">Nama: <strong id="exitName"></strong><br>Waktu keluar: <strong id="exitTime"></strong></div>
+<button class="btn btn-success" onclick="location.reload()">Selesai</button></div>
+</section></main><div id="toast" class="toast"></div><script src="script.js"></script></body></html>

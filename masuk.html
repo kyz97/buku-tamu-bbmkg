@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamu Masuk — BBMKG Wilayah II</title>
+<link rel="stylesheet" href="style.css"></head><body><header class="site-header">
+  <div class="brand">
+    <div class="brand-mark">B</div>
+    <div><strong>BBMKG WILAYAH II</strong><span>Sistem Buku Tamu</span></div>
+  </div>
+  <div class="header-badge">TAMU MASUK</div>
+</header>
+<main><section class="container narrow">
+<div class="eyebrow">QR Pintu Masuk</div><h1>Tamu Masuk</h1>
+<p class="subtitle" style="margin-left:0">Lengkapi data kunjungan. Setelah dikirim, Anda harus menunggu konfirmasi petugas sebelum memasuki ruangan.</p>
+<form class="card form-card" id="entryForm">
+<div class="field">
+  <label>Nama Tamu</label>
+  <div id="namesContainer">
+    <div class="name-row">
+      <input class="guest-name-input" required placeholder="Masukkan nama lengkap">
+    </div>
+  </div>
+  <button type="button" class="btn-add-name" id="addNameBtn">+ Tambah Nama (jika rombongan)</button>
+</div>
+<div class="field"><label for="unit">Unit Kerja / Instansi</label><input id="unit" required placeholder="Masukkan unit kerja / instansi"></div>
+<div class="field"><label for="purpose">Keperluan</label><textarea id="purpose" required placeholder="Tuliskan keperluan kunjungan"></textarea></div>
+<button class="btn btn-primary" type="submit">Kirim Data</button></form>
+
+<div id="waiting" class="card status-card hidden">
+<div class="status-icon ok">✓</div><div class="eyebrow">Pendaftaran Berhasil</div><h2>Nomor Kunjungan</h2>
+<div class="visitor-code" id="visitorId"></div>
+<button type="button" class="btn-copy" id="copyIdBtn" onclick="copyVisitorId()">Salin Nomor</button>
+<p class="reminder">⚠️ Simpan/screenshot nomor ini — dibutuhkan untuk konfirmasi keluar.</p>
+<p class="subtitle">Status: <strong>Menunggu Konfirmasi</strong><br>Silakan tunggu petugas menyetujui kunjungan Anda.</p>
+<button class="btn btn-secondary" onclick="checkEntryStatus()">Cek Status</button></div>
+
+<div id="approved" class="card status-card hidden">
+<div class="status-icon ok">✓</div><div class="eyebrow">Akses Disetujui</div><h2>Anda Telah Dikonfirmasi</h2>
+<p class="subtitle">Data kunjungan telah disetujui oleh petugas. Silakan memasuki ruangan.</p>
+<button class="btn btn-success" onclick="location.reload()">Selesai</button></div>
+
+<div id="rejected" class="card status-card hidden">
+<div class="status-icon no">×</div><div class="eyebrow">Akses Tidak Disetujui</div><h2>Kunjungan Ditolak</h2>
+<p class="subtitle">Mohon mengikuti arahan petugas terkait kunjungan Anda.</p>
+<button class="btn btn-secondary" onclick="location.reload()">Selesai</button></div>
+</section></main><div id="toast" class="toast"></div><script src="script.js"></script></body></html>
